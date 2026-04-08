@@ -1,71 +1,113 @@
-# Scholarship-Hunter
-🚀 Scholarship Hunter
+<h1>🚀 Scholarship Hunter</h1>
 
+<p>
 An AI-powered platform that helps students discover and apply for scholarships tailored to their profile.
+</p>
 
-🎯 Problem
+<hr>
 
-Students from low-income or underrepresented backgrounds often miss out on scholarships due to:
+<h2>🎯 Problem</h2>
+<ul>
+  <li>Lack of awareness about available scholarships</li>
+  <li>Information scattered across multiple platforms</li>
+  <li>Complex application processes</li>
+</ul>
 
-Lack of awareness
-Scattered information
-Complex application processes
-💡 Solution
+<hr>
 
-Scholarship Hunter simplifies the entire process by:
+<h2>💡 Solution</h2>
+<p>
+<strong>Scholarship Hunter</strong> simplifies the entire process by:
+</p>
+<ul>
+  <li>Finding all eligible scholarships</li>
+  <li>Ranking them based on relevance</li>
+  <li>Assisting in the application process</li>
+</ul>
 
-Finding all eligible scholarships
-Ranking them based on relevance
-Assisting in the application process
-🧠 Key Features
-🎯 AI-based scholarship recommendations
-🔍 Personalized filtering system
-🤖 Essay generation assistance
-🤝 Community & mentor support
-🔔 Deadline alerts & notifications
-⚙️ How It Works
-User signs up and fills profile
-System stores user data
-AI matches user with scholarships
-Scholarships are scored and ranked
-User gets personalized recommendations
-🧠 AI Recommendation Logic
+<hr>
 
-The platform uses a rule-based scoring system:
+<h2>🧠 Key Features</h2>
+<ul>
+  <li>🎯 AI-based scholarship recommendations</li>
+  <li>🔍 Personalized filtering system</li>
+  <li>🤖 Essay generation assistance</li>
+  <li>🤝 Community & mentor support</li>
+  <li>🔔 Deadline alerts & notifications</li>
+</ul>
 
-+40 → Academic match
-+30 → Income match
-+20 → Location match
-+10 → Field match
+<hr>
 
+<h2>⚙️ How It Works</h2>
+<ol>
+  <li>User signs up and fills profile</li>
+  <li>System stores user data</li>
+  <li>AI matches user with scholarships</li>
+  <li>Scholarships are scored and ranked</li>
+  <li>User gets personalized recommendations</li>
+</ol>
+
+<hr>
+
+<h2>🧠 AI Recommendation Logic</h2>
+<p>The platform uses a <strong>rule-based scoring system</strong>:</p>
+<ul>
+  <li>+40 → Academic match</li>
+  <li>+30 → Income match</li>
+  <li>+20 → Location match</li>
+  <li>+10 → Field match</li>
+</ul>
+<p>
 Scholarships are ranked based on total score to provide the best matches.
+</p>
 
-🛠 Tech Stack
-Frontend:
-React.js
-Backend:
-Node.js
-Express.js
-Database:
-MongoDB
-Others:
-REST APIs
-AI integration (for essay generation)
-📡 API Endpoints
-POST /api/users → Create user
-GET /api/users/:id → Get user
-POST /api/scholarships → Add scholarship
-GET /api/scholarships → Get all scholarships
-GET /api/recommend/:userId → Get recommendations
-📸 Demo (Optional)
+<hr>
 
-Add screenshots or demo link here
+<h2>🛠 Tech Stack</h2>
 
-🚀 Future Scope
-ML-based recommendation system
-Mobile application
-Global scholarship database
-Advanced analytics
-👨‍💻 Developed For
+<h3>Frontend:</h3>
+<ul>
+  <li>React.js</li>
+</ul>
 
-Hackathon Project 🚀
+<h3>Backend:</h3>
+<ul>
+  <li>Node.js</li>
+  <li>Express.js</li>
+</ul>
+
+<h3>Database:</h3>
+<ul>
+  <li>MongoDB</li>
+</ul>
+
+<hr>
+
+<h2>📡 API Endpoints</h2>
+<ul>
+  <li><code>POST /api/users</code> → Create user</li>
+  <li><code>GET /api/users/:id</code> → Get user</li>
+  <li><code>POST /api/scholarships</code> → Add scholarship</li>
+  <li><code>GET /api/scholarships</code> → Get all scholarships</li>
+  <li><code>GET /api/recommend/:userId</code> → Get recommendations</li>
+</ul>
+
+<hr>
+
+<h2>📸 Demo</h2>
+<p>Add screenshots or demo link here</p>
+
+<hr>
+
+<h2>🚀 Future Scope</h2>
+<ul>
+  <li>ML-based recommendation system</li>
+  <li>Mobile application</li>
+  <li>Global scholarship database</li>
+  <li>Advanced analytics</li>
+</ul>
+
+<hr>
+
+<h2>👨‍💻 Developed For</h2>
+<p>Hackathon Project 🚀</p>
