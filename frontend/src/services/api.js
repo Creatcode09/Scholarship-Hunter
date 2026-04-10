@@ -38,3 +38,42 @@ export const fetchAllScholarships = async () => {
 
   return response.json();
 };
+
+// Get single scholarship by ID
+export const fetchScholarshipById = async (id) => {
+  const response = await fetch(`${API_BASE}/scholarships/${id}`);
+  if (!response.ok) throw new Error("Failed to fetch scholarship details");
+  return response.json();
+};
+
+// Get all mentors
+export const fetchMentors = async () => {
+  const response = await fetch(`${API_BASE}/mentors`);
+  if (!response.ok) throw new Error("Failed to fetch mentors");
+  return response.json();
+};
+
+// Get mentor by ID
+export const fetchMentorById = async (id) => {
+  const response = await fetch(`${API_BASE}/mentors/${id}`);
+  if (!response.ok) throw new Error("Failed to fetch mentor details");
+  return response.json();
+};
+
+// Get community posts
+export const fetchCommunityPosts = async () => {
+  const response = await fetch(`${API_BASE}/posts`);
+  if (!response.ok) throw new Error("Failed to fetch community posts");
+  return response.json();
+};
+
+// Create a community post
+export const createCommunityPost = async (postData) => {
+  const response = await fetch(`${API_BASE}/posts`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(postData),
+  });
+  if (!response.ok) throw new Error("Failed to publish post");
+  return response.json();
+};

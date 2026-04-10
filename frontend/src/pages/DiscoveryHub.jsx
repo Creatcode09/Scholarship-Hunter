@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { IndianRupee, Calendar, ChevronRight, AlertCircle, Sparkles, Filter, Loader2, Trophy, MapPin, BookOpen } from 'lucide-react';
 import { getRecommendations, fetchAllScholarships } from '../services/api';
 
 export default function DiscoveryHub() {
   const location = useLocation();
-  
+  const navigate = useNavigate();
+
   const fromProfile = location.state?.fromProfile;
-  const skippedProfile = location.state?.skippedProfile;
   const userId = location.state?.userId;
 
   const [scholarships, setScholarships] = useState([]);
@@ -62,7 +62,7 @@ export default function DiscoveryHub() {
   return (
     <div className="min-h-screen bg-slate-50 pt-24 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Banner: Recommended */}
         {isRecommended && !loading && scholarships.length > 0 && (
           <div className="mb-8 flex items-center gap-4 bg-emerald-50 border border-emerald-200 text-emerald-900 p-4 rounded-2xl shadow-sm">
@@ -81,7 +81,7 @@ export default function DiscoveryHub() {
           <div className="mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white border border-navy-100 text-navy-900 p-5 rounded-2xl shadow-sm">
             <div className="flex items-center gap-4">
               <div className="bg-amber-100 p-2 rounded-full">
-                 <AlertCircle className="w-6 h-6 text-amber-600" />
+                <AlertCircle className="w-6 h-6 text-amber-600" />
               </div>
               <div>
                 <h3 className="font-bold text-lg">Want personalized matches?</h3>
@@ -139,7 +139,7 @@ export default function DiscoveryHub() {
                 {scholarships.length} Result{scholarships.length !== 1 ? 's' : ''}
               </span>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {scholarships.map((scholarship, index) => {
                 const scoreBadge = isRecommended ? getScoreBadge(scholarship.matchScore) : null;
@@ -147,7 +147,7 @@ export default function DiscoveryHub() {
                   <div key={scholarship._id || index} className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all p-6 group flex flex-col h-full relative overflow-hidden">
                     {/* Decorative shape */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-[100px] -z-0 transition-transform duration-500 group-hover:scale-110" />
-                    
+
                     <div className="relative z-10 flex-grow flex flex-col">
                       {/* Tags Row */}
                       <div className="flex flex-wrap gap-2 mb-4">
@@ -163,12 +163,12 @@ export default function DiscoveryHub() {
                           </span>
                         )}
                       </div>
-                      
+
                       <h3 className="text-xl font-bold text-navy-900 mb-2 group-hover:text-emerald-600 transition-colors pr-8">
                         {scholarship.title}
                       </h3>
                       <p className="text-sm font-medium text-navy-500 mb-5">{scholarship.provider}</p>
-                      
+
                       <div className="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-100 mt-auto">
                         <div className="flex items-center text-sm text-slate-700 gap-3">
                           <div className="bg-emerald-100 p-1.5 rounded text-emerald-600">
@@ -200,8 +200,11 @@ export default function DiscoveryHub() {
                         )}
                       </div>
                     </div>
-                    
-                    <button className="w-full mt-2 py-3 rounded-xl border-2 border-navy-900 text-navy-900 font-bold group-hover:bg-navy-900 group-hover:text-white transition-all flex items-center justify-center gap-2">
+
+                    <button
+                      onClick={() => navigate(`/details/${scholarship._id || scholarship.id}`)}
+                      className="w-full mt-2 py-3 rounded-xl border-2 border-navy-900 text-navy-900 font-bold group-hover:bg-navy-900 group-hover:text-white transition-all flex items-center justify-center gap-2"
+                    >
                       View Details
                       <ChevronRight className="w-4 h-4" />
                     </button>
