@@ -29,7 +29,8 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-navy-100 hover:text-white transition-colors font-medium">Home</Link>
-            <Link to="/" className="text-navy-100 hover:text-white transition-colors font-medium">Search</Link>
+            <Link to="/search" className="text-navy-100 hover:text-white transition-colors font-medium">Search</Link>
+            <Link to="/community" className="text-navy-100 hover:text-white transition-colors font-medium">Community</Link>
             <Link to="/profile" className="px-5 py-2 rounded-full border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-400 transition-all font-medium">
               Profile Builder
             </Link>

@@ -189,7 +189,10 @@ export default function DiscoveryHub() {
                     </div>
                   </div>
                   
-                  <button className="w-full mt-2 py-3 rounded-xl border-2 border-navy-900 text-navy-900 font-bold group-hover:bg-navy-900 group-hover:text-white transition-all flex items-center justify-center gap-2">
+                  <button 
+                    onClick={() => navigate(`/details/${scholarship.id}`)}
+                    className="w-full mt-2 py-3 rounded-xl border-2 border-navy-900 text-navy-900 font-bold group-hover:bg-navy-900 group-hover:text-white transition-all flex items-center justify-center gap-2"
+                  >
                     View Details
                     <ChevronRight className="w-4 h-4" />
                   </button>
